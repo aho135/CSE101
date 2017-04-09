@@ -32,6 +32,18 @@ public class HW1
 
   }
   
+  public void zeroMatrix(int [][] arr)
+  {
+    for (int i = 0; i < arr.length; i++)
+    {
+      for (int j = 0; j < arr.length; j++)
+      {
+        arr[i][j] = 0;
+      }
+
+    }
+  }
+  
   public void randMatrix(int [][] arr)
   {
     Random rand = new Random();
@@ -48,16 +60,8 @@ public class HW1
         }
         
         int val = rand.nextInt(2);
-        if (val == 1)
-        {
-          arr[i][j] = val;
-          arr[j][i] = val;
-        }
-        else
-        {
-          arr[i][j] = val;
-          arr[i][j] = val;
-        }
+        arr[i][j] = val;
+        arr[j][i] = val;
       }
       index++;
     }   
@@ -126,18 +130,201 @@ public class HW1
   public static void main(String [] args)
   {
     HW1 hw = new HW1();
+    
+    /*
     int [][] arr = new int[][]{ {0,1,1},{1,0,1},{1,1,0} };
     
     int [][] arr1 = new int[][] { {0,1,0,0,0}, {1,0,1,1,0}, {0,1,0,1,1}, {0,1,1,0,1}, {0,0,1,1,0}};
+    */
     
-    int [][] arr2 = new int[(int)Math.pow(2,6)][(int)Math.pow(2,6)];
+    
+    //int [][] arr = new int[(int)Math.pow(2,0)][(int)Math.pow(2,0)];
+    //int [][] arr1 = new int[(int)Math.pow(2,1)][(int)Math.pow(2,1)];
+    int [][] arr2 = new int[(int)Math.pow(2,2)][(int)Math.pow(2,2)];
+    int [][] arr3 = new int[(int)Math.pow(2,3)][(int)Math.pow(2,3)];
+    int [][] arr4 = new int[(int)Math.pow(2,4)][(int)Math.pow(2,4)];
+    int [][] arr5 = new int[(int)Math.pow(2,5)][(int)Math.pow(2,5)];
+    int [][] arr6 = new int[(int)Math.pow(2,6)][(int)Math.pow(2,6)];
+    int [][] arr7 = new int[(int)Math.pow(2,7)][(int)Math.pow(2,7)];
+    int [][] arr8 = new int[(int)Math.pow(2,8)][(int)Math.pow(2,8)];
+    int [][] arr9 = new int[(int)Math.pow(2,9)][(int)Math.pow(2,9)];
+    int [][] arr10 = new int[(int)Math.pow(2,10)][(int)Math.pow(2,10)];
+    int [][] arr11 = new int[(int)Math.pow(2,11)][(int)Math.pow(2,11)];
+
+    //hw.randMatrix(arr);
+    //hw.randMatrix(arr1);
     hw.randMatrix(arr2);
+    hw.randMatrix(arr3);
+    hw.randMatrix(arr4);
+    hw.randMatrix(arr5);
+    hw.randMatrix(arr6);
+    hw.randMatrix(arr7);
+    hw.randMatrix(arr8);
+    hw.randMatrix(arr9);
+    hw.randMatrix(arr10);
+    hw.randMatrix(arr11);
+    long startTime = 0;
+    long endTime = 0;
+    long duration = 0;
 
+/*
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr1));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+*/
+    
+    startTime = System.nanoTime();
     System.out.println(hw.existTriangle(arr2));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr3));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr4));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr5));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr6));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr7));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+   
 
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr8));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
 
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr9));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr10));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr11));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+    
+    /*
     System.out.println(hw.existTriangle(arr));
     System.out.println(hw.existTriangle(arr1));
+    */
+    System.out.println("\nStarting runtime for bipartite graphs");
+
+    hw.zeroMatrix(arr2);
+    hw.zeroMatrix(arr3);
+    hw.zeroMatrix(arr4);
+    hw.zeroMatrix(arr5);
+    hw.zeroMatrix(arr6);
+    hw.zeroMatrix(arr7);
+    hw.zeroMatrix(arr8);
+    hw.zeroMatrix(arr9);
+    hw.zeroMatrix(arr10);
+    hw.zeroMatrix(arr11);
+    
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr2));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr3));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr4));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+
+
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr5));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr6));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr7));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr8));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr9));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr10));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
+    startTime = System.nanoTime();
+    System.out.println(hw.existTriangle(arr11));
+    endTime = System.nanoTime();
+    duration = (endTime - startTime);
+    System.out.println(duration);
+  
   }
 
 }
