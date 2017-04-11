@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{amsthm, amssymb, amsmath,verbatim}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+
+\newtheorem*{claim}{Claim}
+\newtheorem{ques}{Question}
+
+\title{CSE101 Homework 1}
+\date{Spring 2017}
+\author{Shu-Wei Hsu, Andrew Ho}
+\begin{document}
+
+\maketitle
+
+\begin{ques}
+\hfill
+\begin{enumerate}[(a)]
+\item False. $3^n$ grows way faster than $2^n$. Hence, it is slower. Therefore, ${2}{(3^n)} \in \Omega{({3}{(2^n)})} $
+\item True. The highest power in both equation is 12.
+\item False. $n^{10}$ grows way faster than n. Hence, log(${n^{10}}$) grows way faster than log(n). Hence, $log({n^{10}}) \in \Omega{(log(n))} $ 
+\item False. $\sum_{i=1}^{n} i^k$ = $1^k + 2^k + \dots + n^k$. The highest power term is $n^k$. Hence, $\sum_{i=1}^{n} i^k \in $ ${O}$${(n^{k+1})}$
+\item False. n! grows way faster than $2^n$. Hence, we should have $n! \in \Omega{(2^n)}$
+\end{enumerate}
+\end{ques}
+
+\begin{ques}
+\hfill
+\begin{enumerate}[(a)]
+\item 
+Base case: n=6
+From the definition of Fibonacci numbers, we can calculate the following:
+$$
+F_2=F_1 + F_0 = 1 + 0 = 1, F_3 = F_2 + F_1 = 1 + 1 = 2, F_4 = F_3 + F_2 = 1 + 2 = 3
+$$
+$$
+F_5 = F_4 + F_3 = 2 + 3 = 5, F_6 = F_5 + F_4 = 8
+$$
+We know that $2^{0.5*6} = 2^3 = 8$. Hence, the base case is true. $F_n \geqslant 2^{0.5n}$ when $n = 6$. Assume $F_n \geqslant 2^{0.5n}$ for all $n \geqslant 6$. We need to show that this is true for the case $n+1$. By the definition, we have the following:
+\begin{align}
+F_{n+1} &= F_n + F_{n-1} \\
+& \geqslant 2^{0.5n} + 2^{(0.5(n-1))} \\
+&= 2^{0.5n} + 2^{0.5n - 0.5} \\
+&= 2^{0.5n}  + \frac{2^{0.5n} }{2^{0.5} } \\
+&= 2^{0.5n}(1+2^{-0.5})
+\end{align}
+Since $(1+2^{-0.5}) > 2^{0.5n} $, we get the following:
+\begin{align}
+F_{n+1} & \geqslant 2^{0.5n}(1+2^{-0.5})\\
+& \geqslant 2^{0.5n}(2^{0.5})\\
+& \geqslant 2^{0.5(n+1)}
+\end{align}
+Hence, we have shown that $F_n \geqslant 2^{0.5n}$ for all $n \geqslant 6$
+
+\item
+Base Case: n=0
+From the definition of Fibonacci numbers, we can calculate the following:
+$F_0 = 0$, $2^0 = 1$. Hence, base case is true. $F_n \leqslant 2^n $ when n = 0. Assume $F_n \leqslant 2^n$ for all $n\geqslant 0$. We need to show that this is true for the case $n+1$. By the definition, we have the following:
+\begin{align}
+F_{n+1} &= F_n + F_{n-1} \\
+&\leqslant 2^n + 2^{n-1} \\
+&= 2^{n} + \frac{2^{n}}{2} \\
+&= {2^n}({1+ \frac{1}{2}}) \\
+&\leqslant 2(2^n) \\
+&\leqslant 2^{(n+1)}
+\end{align}
+Hence, we have shown that $F_n \leqslant 2^{n}$ for all $n \geqslant 0$
+
+\item
+We conclude that $F_n$ grows exponentially an it is between $\Omega({2^{0.5n}})$ and ${O}$$(2^n)$.
+
+\end{enumerate}
+\end{ques}
+\begin{ques}
+
+
+
+\end{ques}
+
+\begin{ques}
+
+\graphicspath{ {/Users/Lucas/Desktop/CSE101/} }
+Below are the running time graphs \\
+\includegraphics[width=8cm, height=6cm]{/Users/Lucas/Desktop/CSE101/random}
+\includegraphics[width=8cm, height=6cm]{/Users/Lucas/Desktop/CSE101/bipart} \\
+We see that the run time for bipartite graphs is longer than a randomly generated graph. This is because bipartite graphs represent the worse case in which we can never terminate the algorithm early because there are no triangles.
+
+\end{ques}
+
+
+\end{document} 
