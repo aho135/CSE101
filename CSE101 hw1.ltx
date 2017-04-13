@@ -80,7 +80,46 @@ We conclude that $F_n$ grows exponentially an it is between $\Omega({2^{0.5n}})$
 \end{enumerate}
 \end{ques}
 \begin{ques}
+\hfill
+   \\public boolean existTriangle2(int [][] arr)  
+    \\  HashSet<Pair> set = new HashSet<Pair>(); 
+    \\ArrayList<Pair> edges = new ArrayList<Pair>(); \\
+    \\int index = 1; \\
+    for each row in arr: \\
+    
+    	for each column from 0 to index: 
+    	
+	if (arr[i][j] == 1): 
+    	
+	Pair p = new Pair(i,j); 
+    	
+	Pair p1 = new Pair(j,i); 
+    	
+	edges.add(p); 
+     	
+	set.add(p); 
+     	
+	set.add(p1); \\
+\\ index++; \\
+    //iterate through edges array \\
+    for each edge in array edges:
+    Pair edge = edges.get(i); \\
 
+	for each vertex:
+      
+        int xval = edge.x; 
+        
+        int yval = edge.y;
+
+        Pair p = new Pair(xval,vertex); 
+        
+        Pair p1 = new Pair(yval,vertex); 
+
+        if set.contains(p) and set.contains(p1): 
+         
+          return true;\\
+\\return false; \\\\
+Our algorithm has ${O}$$({n^2})$ for worst case running time because we need to iterate the whole n by n matrix. In terms of node and number of edges, it should have a worst case of ${O}$$({nm})$ where n is number of nodes and m is number of edges. This is because for each edge, we need to iterate through all vertices and check if a triangle exists.
 
 
 \end{ques}
